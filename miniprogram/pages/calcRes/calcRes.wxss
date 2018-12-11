@@ -1,0 +1,23 @@
+.common-item {
+  height: 64rpx;
+  padding: 8rpx 16rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 16 0rpx;
+}
+
+.btn-small {
+  width: 150rpx;
+  font-size: 28rpx;
+  display: inline-block;
+}
+
+.day-picker {
+  width: 50rpx;
+  margin-left: 16rpx;
+}
+
+.btn-calc {
+  margin: 16rpx;
+}

@@ -1,0 +1,31 @@
+<view>
+  <view class='common-item'>
+    <input class='input-normal' placeholder='当前结余' type='number' value='{{res}}' bindinput='resInput'></input>
+  </view>
+  <view class='common-item'>
+    <input class='input-normal' placeholder='每月收入' type='number' value='{{income}}' bindinput='incomeInput'></input>
+  </view>
+  <view class='common-item'>
+    <input class='input-normal' placeholder='额外收入' type='number' value='{{ext}}' bindinput='extInput'></input>
+  </view>
+  <view class='common-item' wx:for='{{planList}}' wx:for-index='idx' wx:for-item="plan" wx:key='idx'>
+    <input class='input-small' placeholder='还款金额' bindinput='numInput' data-idx='{{idx}}' type='number' value='{{plan.num}}'></input>
+    <input class='input-small' placeholder='还款周期（月）' bindinput='monthInput' data-idx='{{idx}}' type='number' value='{{plan.month}}'></input>
+    <picker mode='selector' value='{{index}}' range='{{days}}' bindchange='bindDayChange' data-idx='{{idx}}' class='day-picker'>
+      <view class='text-nomarl'>
+        {{plan.day}}
+      </view>
+    </picker>
+    <button wx:if='{{idx === planList.length - 1}}' class='btn-small' bindtap='clickAdd'>添加</button>
+    <button wx:else type="warn" class='btn-small' bindtap='clickDel' data-idx="{{idx}}">删除</button>
+  </view>
+  <view class='common-item'>
+    <picker mode='date' value='{{date}}' bindchange='bindPickerChange'>
+      <view class='text-nomarl'>
+        截止日期{{date}}
+      </view>
+    </picker>
+  </view>
+  <button type="primary" class='btn-calc' bindtap='calcRes'>开始计算</button>
+  <text style='margin: 32rpx 16rpx'>总结余：{{result}}</text>
+</view>

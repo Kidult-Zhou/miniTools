@@ -1,0 +1,6 @@
+<view>
+  <input type='number' placeholder='金额'></input>
+  <picker mode="multiSelector" range='{{types}}' bindchange='typeChange' bindcolumnchange="typeColumnChange" value='{{mlutiIndex}}'>
+    <text>当前选择：{{types[0][multiIndex[0]]}} > {{types[1][multiIndex[1]]}}</text>
+  </picker>
+</view>
