@@ -126,7 +126,6 @@ Page({
       }
       return fmt
     }
-    console.log(DB, '-=-=-=-=-=-=')
   },
 
   /**

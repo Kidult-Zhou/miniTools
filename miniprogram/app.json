@@ -4,8 +4,8 @@
     "pages/calcRes/calcRes",
     "pages/bills/bills",
     "pages/analysis/analysis",
-    "pages/us/us",
     "pages/index/index",
+    "pages/us/us",
     "pages/test/test"
   ],
   "window": {

@@ -1,3 +1,6 @@
-<view>
-  <form report-submit="true"></form>
+<view class='main-con lover'>
+  <view class='count-down-con'>
+    <text class='count-down'>我们结婚吧： {{countDown}}</text>
+  </view>
+  <view class='typing-text'>{{animationData}}</view>
 </view>

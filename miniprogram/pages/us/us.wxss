@@ -1,0 +1,27 @@
+.lover {
+  background-image: url('https://7465-tes-6fb6e5-1258228658.tcb.qcloud.la/lover.png?sign=7a73553fef48c6276b8bd75fc3dd4aab&t=1547108301');
+  background-position: center;
+  z-index: 1;
+}
+.count-down-con {
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+}
+.count-down {
+  color: #f9fbe7;
+}
+
+.typing-text {
+  font-size: 32rpx;
+  letter-spacing: 5rpx;
+  animation: typing 20s steps(1rpx, end) forwards;
+  text-align: center;
+  color: black;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@keyframes typing {
+  from {width: 0rpx}
+}
