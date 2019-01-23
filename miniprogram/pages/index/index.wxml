@@ -1,11 +1,11 @@
 <!--index.wxml-->
 <view class="container">
 
-  <view class='uploader'>
+  <!-- <view class='uploader'>
     <navigator url='../calcRes/calcRes' open-type='navigate' class='uploader-text'>
       <text>结余计算</text>
     </navigator>
-  </view>
+  </view> -->
 
   <view class='uploader'>
     <navigator url='../accountBook/accountBook' open-type='navigate' class='uploader-text'>
@@ -13,9 +13,26 @@
     </navigator>
   </view>
 
+  <view class='uploader'>
+    <navigator url='../bills/bills' open-type='navigate' class='uploader-text'>
+      <text>消费记录</text>
+    </navigator>
+  </view>
+
+  <view class="uploader">
+    <navigator url='../analysis/analysis' open-type='navigate' class='uploader-text'>
+      <text>消费分析</text>
+    </navigator>
+  </view>
+
+  <!-- <view class='uploader'>
+    <navigator url='../test/test' open-type='navigate' class='uploader-text'>
+      <text>小窝</text>
+    </navigator>
+  </view> -->
 
   <!-- 用户 openid -->
-  <view class="userinfo">
+  <!-- <view class='uploader'>
     <button 
       open-type="getUserInfo" 
       bindgetuserinfo="onGetUserInfo"
@@ -25,7 +42,7 @@
     <view>
       <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
     </view>
-  </view>
+  </view> -->
 
 
   <!-- 上传图片 -->

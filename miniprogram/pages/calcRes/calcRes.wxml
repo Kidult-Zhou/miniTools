@@ -1,16 +1,16 @@
 <view>
   <view class='common-item'>
-    <input class='input-normal' placeholder='当前结余' type='number' value='{{res}}' bindinput='resInput'></input>
+    <input class='input-normal' placeholder='当前结余' type='digit' value='{{res}}' bindinput='resInput'></input>
   </view>
   <view class='common-item'>
-    <input class='input-normal' placeholder='每月收入' type='number' value='{{income}}' bindinput='incomeInput'></input>
+    <input class='input-normal' placeholder='每月收入' type='digit' value='{{income}}' bindinput='incomeInput'></input>
   </view>
   <view class='common-item'>
-    <input class='input-normal' placeholder='额外收入' type='number' value='{{ext}}' bindinput='extInput'></input>
+    <input class='input-normal' placeholder='额外收入' type='digit' value='{{ext}}' bindinput='extInput'></input>
   </view>
   <view class='common-item' wx:for='{{planList}}' wx:for-index='idx' wx:for-item="plan" wx:key='idx'>
-    <input class='input-small' placeholder='还款金额' bindinput='numInput' data-idx='{{idx}}' type='number' value='{{plan.num}}'></input>
-    <input class='input-small' placeholder='还款周期（月）' bindinput='monthInput' data-idx='{{idx}}' type='number' value='{{plan.month}}'></input>
+    <input class='input-small' placeholder='还款金额' bindinput='numInput' data-idx='{{idx}}' type='digit' value='{{plan.num}}'></input>
+    <input class='input-small' placeholder='还款周期（月）' bindinput='monthInput' data-idx='{{idx}}' type='digit' value='{{plan.month}}'></input>
     <picker mode='selector' value='{{index}}' range='{{days}}' bindchange='bindDayChange' data-idx='{{idx}}' class='day-picker'>
       <view class='text-nomarl'>
         {{plan.day}}

@@ -1,0 +1,16 @@
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 16rpx 0;
+}
+
+.nav-normal {
+  font-size: 24rpx;
+  margin: 0 32rpx;
+  flex: 1;
+}
+
+.btn-normal {
+  font-size: 24rpx;
+  width: 100%;
+}

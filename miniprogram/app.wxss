@@ -21,3 +21,27 @@
   font-size: 28rpx;
   color: #666
 }
+
+.common-item {
+  height: 64rpx;
+  padding: 16rpx 32rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 32 0rpx;
+}
+
+.btn-large {
+  margin: 0 32rpx;
+  font-size: 28rpx;
+}
+
+.main-con {
+  background-image: url('https://7465-tes-6fb6e5-1258228658.tcb.qcloud.la/main_bg.jpg?sign=c4ec4d47b0529bb3e2a1117fbb3ad1ba&t=1546408606');
+  background-size: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

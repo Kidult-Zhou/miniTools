@@ -1,0 +1,42 @@
+.total-item {
+  display: flex;
+  font-size: 28rpx;
+  padding: 16rpx;
+  justify-content: space-between;
+  color: white;
+}
+
+.detail-item {
+  display: flex;
+  font-size: 24rpx;
+  padding: 16rpx 32rpx;
+  justify-content: space-between;
+  color: white;
+}
+
+.item-food {
+  background-color: rgba(224, 0, 50, 0.5)
+}
+.item-trans {
+  background-color: rgba(98,0,234, 0.5)
+}
+.item-home {
+  background-color: rgba(0,145,234, 0.5)
+}
+.item-fee {
+  background-color: rgba(18,199,0, 0.5)
+}
+.item-med {
+  background-color: rgba(255,214,0, 0.5)
+}
+.item-friend {
+  background-color: rgba(221,44,0, 0.5)
+}
+.item-ent {
+  background-color: rgba(96,125,139, 0.5)
+}
+
+.pie {
+  height:300px;
+  width: 100%;
+}

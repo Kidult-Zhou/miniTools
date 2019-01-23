@@ -34,6 +34,8 @@ Page({
         }
       }
     })
+
+    
   },
 
   onGetUserInfo: function(e) {

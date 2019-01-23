@@ -1,0 +1,3 @@
+<view>
+  <form report-submit="true"></form>
+</view>

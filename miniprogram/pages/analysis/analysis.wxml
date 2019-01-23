@@ -1,0 +1,11 @@
+<view class='main-con'>
+  <canvas canvas-id="pieCanvas" class="canvas" class='pie' ></canvas>
+  <view class='total-item'>
+    <text>总花费</text>
+    <text>￥{{billsTotal / 100}}</text>
+  </view>
+  <view wx:for="{{billsData}}" wx:key='{{index}}' class='detail-item {{classArr[index]}}'>
+    <text>{{item.name}}</text>
+    <text>￥{{item.data / 100}}</text>
+  </view>
+</view>

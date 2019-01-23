@@ -1,0 +1,17 @@
+<view class="main-con">
+  <picker mode="date" value="{{date}}" start="2019-01-01" fields="month" bindchange="bindDateChange" class='date-picker-con'>
+    <view class="month-item">月份:  {{date}}</view>
+  </picker>
+  <scroll-view scroll-y class='scoller'>
+    <view wx:for="{{bills}}" wx:key='{{index}}'>
+      <view class="date-item">
+        <text>{{item.date}}</text>
+        <text>￥{{item.amount / 100}}</text>
+      </view>
+      <view wx:for="{{item.items}}" w:for-index="idx" wx:for-item="detail" wx:key="{{idx}}" class='detail-item'>
+        <text class="detail-t">{{detail.type}}{{detail.remark ? '（' + detail.remark + '）' : ''}}</text>
+        <text class="detail-t">￥{{detail.number / 100}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view> 

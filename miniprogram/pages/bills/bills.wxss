@@ -1,0 +1,36 @@
+.date-picker-con {
+  height: 96rpx;
+}
+.date-item {
+  background: rgba(0, 188, 222, 0.5);
+  font-size: 28rpx;
+  padding: 16rpx;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-item {
+  background: rgba(128, 222, 234, 0.5);
+  padding: 16rpx 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-t {
+  font-size: 24rpx;
+  color: white;
+}
+.month-item {
+  text-align: center;
+  padding: 16rpx;
+  font-size: 32rpx;
+  color: white;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.scoller {
+  position: absolute;
+  top: 96rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,3 +1,5 @@
+'use strict';
+var DB = require('./db/index.js')
 //app.js
 App({
   onLaunch: function () {
@@ -11,5 +13,11 @@ App({
     }
 
     this.globalData = {}
+
+    DB.init()
+
+    if (window) {
+      console.log(window)
+    }
   }
 })
