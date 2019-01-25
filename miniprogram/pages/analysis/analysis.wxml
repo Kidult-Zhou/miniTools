@@ -1,11 +1,18 @@
 <view class='main-con'>
-  <canvas canvas-id="pieCanvas" class="canvas" class='pie' ></canvas>
-  <view class='total-item'>
-    <text>总花费</text>
-    <text>￥{{billsTotal / 100}}</text>
+  <view class="picker-con">
+    <picker mode="date" value="{{date}}" start="2019-01-01" fields="month" bindchange="bindDateChange" class='date-picker-con'>
+      <view class="month-item">月份:  {{date}}</view>
+    </picker>
   </view>
-  <view wx:for="{{billsData}}" wx:key='{{index}}' class='detail-item {{classArr[index]}}'>
-    <text>{{item.name}}</text>
-    <text>￥{{item.data / 100}}</text>
-  </view>
+  <scroll-view scroll-y class='scoller'>
+    <canvas canvas-id="pieCanvas" class="canvas" class='pie' ></canvas>
+    <view class='total-item'>
+      <text>总花费</text>
+      <text>￥{{billsTotal / 100}}</text>
+    </view>
+    <view wx:for="{{billsData}}" wx:key='{{index}}' class='detail-item {{classArr[index]}}' bind:tap="clickItem" data-index="{{index}}">
+      <text>{{item.name}}</text>
+      <text>￥{{item.data / 100}}</text>
+    </view>
+  </scroll-view>
 </view>

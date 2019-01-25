@@ -1,4 +1,5 @@
 const DB = require('../../db/index.js')
+const consts  = require('../../consts/index.js')
 Page({
 
   /**
@@ -6,8 +7,8 @@ Page({
    */
   data: {
     multiArray: [
-      ['餐饮', '交通', '居家', '缴费', '医药', '人际', '娱乐'],
-      ['早饭', '午饭', '晚饭', '夜宵', '买菜', '水果', '零食']
+      consts.firstType,
+      consts.typeArr[0]
     ],
     multiIndex: [0, 0],
     number: 0,
@@ -27,29 +28,7 @@ Page({
       multiIndex: this.data.multiIndex
     }
     data.multiIndex[e.detail.column] = e.detail.value
-    switch (data.multiIndex[0]) {
-      case 0:
-        data.multiArray[1] = ['早饭', '午饭', '晚饭', '夜宵', '买菜', '水果', '零食']
-        break
-      case 1:
-        data.multiArray[1] = ['公交卡', '打车', '动车高铁', '加油', '车辆保养', '车险', '过路费']
-        break
-      case 2:
-        data.multiArray[1] = ['日常用品', '衣物', '宠物', '家电', '数码']
-        break
-      case 3:
-        data.multiArray[1] = ['水电', '物业', '房租', '房贷', '话费']
-        break
-      case 4:
-        data.multiArray[1] = ['药品', '医院', '保健品']
-        break
-      case 5:
-        data.multiArray[1] = ['份子钱', '红包', '请客', '礼物']
-        break
-      case 6:
-        data.multiArray[1] = ['游戏', 'KTV', '门票', '电影', '电玩', '其他']
-        break
-    }
+    data.multiArray[1] = consts.typeArr[data.multiIndex[0]]
     this.setData(data)
   },
   bindDateChange: function(e) {
@@ -90,7 +69,8 @@ Page({
       data: {
         number: this.data.number * 100,
         remark: this.data.remark,
-        type: this.data.multiIndex,
+        type_f: this.data.multiIndex[0],
+        type_s: this.data.multiIndex[1],
         date: new Date(this.data.date).getTime()
       },
       success(res) {

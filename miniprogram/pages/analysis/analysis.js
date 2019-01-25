@@ -1,5 +1,7 @@
 var wxCharts = require('../../utils/wxcharts')
 const DB = require('../../db/index.js')
+const consts = require('../../consts/index')
+import { getStartEnd } from '../../utils/index.js'
 
 Page({
 
@@ -7,7 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typeArr: ['餐饮', '交通', '居家', '缴费', '医药', '人际', '娱乐'],
     billsData: [
       { name: '餐饮', data: 0 },
       { name: '交通', data: 0 },
@@ -18,24 +19,38 @@ Page({
       { name: '娱乐', data: 0 }
     ],
     classArr: ['item-food', 'item-trans', 'item-home', 'item-fee', 'item-med', 'item-friend', 'item-ent'],
-    billsTotal: 0
+    billsTotal: 0,
+    date: '',
+    start: 0,
+    end: 0,
   },
   loadBills: function(e) {
     const self = this
 
     wx.cloud.callFunction({
       name: 'getBills',
+      data: {
+        start: self.data.start,
+        end: self.data.end
+      },
       complete: res => {
-        console.log('res', res)
         const data = {
-          billsData: self.data.billsData,
-          billsTotal: self.data.billsTotal
+          billsData: [
+            { name: '餐饮', data: 0 },
+            { name: '交通', data: 0 },
+            { name: '居家', data: 0 },
+            { name: '缴费', data: 0 },
+            { name: '医药', data: 0 },
+            { name: '人际', data: 0 },
+            { name: '娱乐', data: 0 }
+          ],
+          billsTotal: 0
         }
+        console.log('res===================', res)
         res.result.data.forEach((item, index, arr) => {
-          data.billsData[item.type[0]].data += (item.number)
+          data.billsData[item.type_f].data += (item.number)
           data.billsTotal += (item.number)
         })
-        console.log(data)
         self.setData(data)
         self.drawPie()
       }
@@ -60,11 +75,39 @@ Page({
       offsetAngle: 90,
     });
   },
+  clickItem: function(e) {
+    console.log('eeeeeeeeeeeeeee', e)
+    let index = e.currentTarget.dataset.index
+    if (index === this.data.selectIndex) {
+      this.setData({
+        selectIndex: -1
+      })
+    } else {
+      this.setData({
+        selectIndex: e.currentTarget.dataset.index
+      })
+    }
+  },
+  bindDateChange: function (e) {
+    let time = getStartEnd(e.detail.value)
+    this.setData({
+      date: e.detail.value,
+      start: time[0].getTime(),
+      end: time[1].getTime()
+    })
+    this.loadBills()
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let time = getStartEnd()
+    this.setData({
+      date: (new Date(Date.now())).Format('yyyy-MM'),
+      start: time[0].getTime(),
+      end: time[1].getTime()
+    })
     this.loadBills()
   },
   allgongsi: function () {

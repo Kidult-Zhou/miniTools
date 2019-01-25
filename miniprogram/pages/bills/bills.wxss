@@ -1,5 +1,11 @@
+.picker-con {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
 .date-picker-con {
   height: 96rpx;
+  flex: 1;
 }
 .date-item {
   background: rgba(0, 188, 222, 0.5);

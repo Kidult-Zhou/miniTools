@@ -7,11 +7,11 @@
 }
 
 .detail-item {
-  display: flex;
   font-size: 24rpx;
   padding: 16rpx 32rpx;
-  justify-content: space-between;
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .item-food {
@@ -39,4 +39,28 @@
 .pie {
   height:300px;
   width: 100%;
+}
+.scoller {
+  position: absolute;
+  top: 96rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.picker-con {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.date-picker-con {
+  height: 96rpx;
+  flex: 1;
+}
+.month-item {
+  text-align: center;
+  padding: 16rpx;
+  font-size: 32rpx;
+  color: white;
+  height: 64rpx;
+  line-height: 64rpx;
 }
